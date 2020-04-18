@@ -1,0 +1,17 @@
+enable SSH:
+1.Launch Raspberry Pi Configuration from the Preferences menu
+2.Navigate to the Interfaces tab
+3.Select Enabled next to SSH
+4.Click OK
+
+Open Terminal in Mac or Linux, or Command Prompt in Windows. Type ssh pi@raspberrypi. If you have changed the username, enter your username instead of You can also replace raspberrypi with the Raspberry Pi’s IP address.
+Enter your password when prompted, then type yes if you encounter an authenticity warning.
+You should now be able to enter Linux Terminal commands to operate the Raspberry Pi.
+
+linux command: hostname -I  ----get Pi's local IP address
+192.168.80.161: allplan company desktop address
+192.168.0.167: raspberry pi's desktop address
+
+Connect to raspberry pi's remote desktop:
+https://pimylifeup.com/raspberry-pi-remote-desktop/
+

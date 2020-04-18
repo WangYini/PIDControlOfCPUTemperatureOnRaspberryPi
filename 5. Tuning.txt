@@ -1,0 +1,20 @@
+---------------------------------------
+1st Trial: Set target temperature = 50 °C:[yellow block]
++ Since raspberry pi has already been in a higher temperature of about 58 °C, I lowered
+down the temperature as far as I can firstly. It lowered to about 44 °C and didn't go lower any more.
++ After several trials I found out that due to the curcuit itself and fan's power, the temperature
+will stay between 42 to 59 °C.
++ Therefore, I set the target temperature to 50 °C.
+
+---------------------------------------
+2nd Trial: Set only Kp = 1, Kd = 0, Ki = 0: [red block]
++ The temperature went up to about 55 °C and stayed there steadily.
+
+---------------------------------------
+3rd Trial: Set Kp = 100, Kd = -20, Ki = 0: [ 
+
+
+---------------------------------------
+4th Trial: Set Kp = 1, Kd = -30, Ki = -10: [
++ there's a 5 °C steady-state error, therefore I added a Ki value to eliminate the error.
++ It turns out that the error is eliminated.=>Successful!

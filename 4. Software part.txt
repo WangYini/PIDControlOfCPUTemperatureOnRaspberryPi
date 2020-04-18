@@ -1,0 +1,59 @@
++++++++++++ Nodes Expanation ++++++++++++
+-------------------------------
+Node MQTT In/MQTT Out from module MQTT:
++ Mosquitto has a MQTT broker, which is a server.
++ Mosquitto has clients, they can be publisher and subscriber.
++ node MQTT In is like a subscriber, it gets message from publisher, which is MQTT Out.
++ In these nodes' configuration properties, you can 
+	set the Server to localhost:1883
+	set the Topic, so the subscriber of the same topic gets the message from the publisher of the same topic,
+	set the QoS, Quality of Service:
+		At most once(0)
+		At least once(1)
+		Exactly once(2)
++ If you want to test MQTT in linux command prompt, you write those three lines in three prompt windows:
+	mosquitto
+	mosquitto_sub -v -t "topic/test"
+	mosquitto_pub -t "topic/test" -m "helloWorld"
+your subscriber will recieve message helloWorld.
+
+-------------------------------
+Node Chart/Gauge from module Dashboard (node-red-dashboard):
++ Use manage palette -> install to install missing nodes from other modules
++ Those nodes are used for showing the data.
+
+-------------------------------
+Node PID Control from module (node-red-node-pidcontrol):
++ PID control target: Set Point
++ PID control has 3 influencial parameters:
+	# Proportional part: decrease the Rise Time
+	# Differential part: reduce the Overshoot and Settling Time
+	# Integral part: eliminate the Steady-State Error
++ four major characteristics:
+	see pic pid parameters influence the major characters.jpeg
+	see pic four major characters.jpg
+
++++++++++++ Modules Expanation ++++++++++++
+------------------------------
+Check CPU's Temperature:
++ Node Inject: trigger check for every 5 seconds
++ Node Exec: execute command line vcgencmd measure_temp, get the temperature of cpu
+
+------------------------------
+Chart & Gauge: CPU temperature:
++ Format temperature data into chart/gauge.
+
+-----------------------------
+PID Control For CPU Temperature of Raspberry PI:
++ Node PID Control: based on current temperature calculate the pid output and give those data to an MQTT publisher.
++ Format pid output data into chart/gauge.
+
+-----------------------------
+PID-PLANT:
++ Calculate how many output need to be given to the fan through output pin GPIO18.
++ has something to do with PWM duty cycle.
+
+
+
+
+
